@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LandingComponent } from './components/landing/landing.component';
+import { ChecklistNotesRoutingModule } from './checklist-notes-routing.module';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    LandingComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    ChecklistNotesRoutingModule
   ]
 })
 export class ChecklistNotesModule { }

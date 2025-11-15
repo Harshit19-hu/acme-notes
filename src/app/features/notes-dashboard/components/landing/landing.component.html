@@ -1,0 +1,22 @@
+<!-- notes-dashboard.component.html -->
+<section class="notes-dashboard">
+    <div class="tiles-grid">
+      <mat-card
+        class="tile-card"
+        *ngFor="let tile of tiles"
+        [routerLink]="tile.route"
+      >
+        <mat-card-header>
+          <mat-icon class="tile-icon">{{ tile.icon }}</mat-icon>
+        </mat-card-header>
+  
+        <mat-card-title>{{ tile.title }}</mat-card-title>
+  
+        <mat-card-content>
+          <p>{{ tile.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+  
+  

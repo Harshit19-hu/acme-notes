@@ -1,19 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TextNotesPageComponent } from './containers/text-notes-page/text-notes-page.component';
-import { TextNoteDetailComponent } from './containers/text-note-detail/text-note-detail.component';
-import { TextNoteFieldsComponent } from './components/text-note-fields/text-note-fields.component';
-
-
-
+import { LandingComponent } from './components/landing/landing.component';
+import { TextNotesRoutingModule } from './text-notes-routing.module';
 @NgModule({
   declarations: [
-    TextNotesPageComponent,
-    TextNoteDetailComponent,
-    TextNoteFieldsComponent
+    LandingComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TextNotesRoutingModule
   ]
 })
 export class TextNotesModule { }

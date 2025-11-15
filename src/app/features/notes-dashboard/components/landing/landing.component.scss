@@ -1,0 +1,74 @@
+/* notes-dashboard.component.scss */
+
+.notes-dashboard {
+    padding: 2rem;
+    background: #f7f7f7; /* light background */
+    min-height: 100vh;
+  }
+  
+  /* GRID LAYOUT */
+  .tiles-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards desktop */
+    justify-items: center;
+  }
+  
+  /* 2 cards tablet/mobile */
+  @media (max-width: 768px) {
+    .tiles-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* 1 card for small phones */
+  @media (max-width: 500px) {
+    .tiles-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  /* CARD STYLE: light, rounded, modern */
+  .tile-card {
+    width: 100%;
+    max-width: 360px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: 0.25s ease;
+    border: 1px solid #e5e5e5;
+    color: #222; /* text color */
+  }
+  
+  .tile-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: #dcdcdc;
+  }
+  
+  /* ICON STYLE */
+  .tile-icon {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 1.2rem;
+  }
+  
+  /* TITLE */
+  mat-card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #111;
+  }
+  
+  /* DESCRIPTION */
+  mat-card-content p {
+    opacity: 0.8;
+    line-height: 1.4;
+    color: #444;
+  }
+  .mat-mdc-card-content{
+    padding-left: 0px;
+  }
+  

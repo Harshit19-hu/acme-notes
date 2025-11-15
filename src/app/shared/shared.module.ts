@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageHeaderComponent } from './ui/layout/page-header/page-header.component';
 import { NoteLayoutComponent } from './ui/layout/note-layout/note-layout.component';
@@ -14,6 +14,9 @@ import { AutofocusDirective } from './directives/autofocus.directive';
 import { DragDropDirective } from './directives/drag-drop.directive';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { NoteTypeLabelPipe } from './pipes/note-type-label.pipe';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 
@@ -35,7 +38,28 @@ import { NoteTypeLabelPipe } from './pipes/note-type-label.pipe';
     NoteTypeLabelPipe
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule
+  ],
+  exports: [
+    PageHeaderComponent,
+    NoteLayoutComponent,
+    NoteListComponent,
+    NoteCardComponent,
+    NoteFormShellComponent,
+    NoteDetailShellComponent,
+    FilterBarComponent,
+    TextFieldComponent,
+    TextareaFieldComponent,
+    FileUploadFieldComponent,
+    AutofocusDirective,
+    DragDropDirective,
+    TruncatePipe,
+    NoteTypeLabelPipe
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
+  
 })
 export class SharedModule { }
