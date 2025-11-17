@@ -3,11 +3,13 @@
 
 <!-- Template for Form -->
 <ng-template #formTemplate>
-  <button mat-stroked-button (click)="viewAllNotes()">Basic</button>
+  <div class="note-action">
+    <button mat-stroked-button (click)="viewAllNotes()">View All Picture Notes</button>
+  </div>
   <app-dynamic-note-form [noteType]="'picture'" (formSubmit)="save($event)"></app-dynamic-note-form>
 </ng-template>
 
 <!-- Template for Notes -->
 <ng-template #layoutTemplate>
-  <app-note-layout [notes]="notesData"></app-note-layout>
+  <app-note-layout (addNotes)="openForm()" [notes]="notesData"></app-note-layout>
 </ng-template>

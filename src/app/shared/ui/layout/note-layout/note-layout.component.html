@@ -1,7 +1,9 @@
 <div class="layout-container">
 
     <aside class="sidebar">
-      <button mat-flat-button (click)="addNote()">Add Note</button>
+      <div class="add-cta"> 
+        <button mat-flat-button (click)="addNote()">Add Note</button>
+      </div>
       <mat-nav-list>
         <mat-list-item
           *ngFor="let note of notes"
