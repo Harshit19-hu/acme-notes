@@ -1,0 +1,29 @@
+.layout-container {
+    display: flex;
+    height: calc(100vh - 70px);
+  }
+  p{
+    padding: .5em 1em;
+    text-transform: capitalize;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .sidebar {
+    width: 260px;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    background: #fafafa;
+  }
+  
+  .sidebar .active {
+    background: #e0f2f1 !important;
+    border-left: 4px solid #009688;
+  }
+  
+  .detail-pane {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  

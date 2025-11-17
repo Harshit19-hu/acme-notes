@@ -1,0 +1,57 @@
+.page-container {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  
+    h1 {
+      font-size: 1.7rem;
+      font-weight: 600;
+    }
+  
+    .type-icon {
+      font-size: 36px;
+      color: #3f51b5;
+    }
+  }
+  
+  .form-card {
+    padding: 24px 30px;
+    border-radius: 12px;
+  }
+  
+  .field {
+    width: 100%;
+    margin-bottom: 18px;
+  }
+  
+  .upload-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+  
+    label {
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+  
+    input[type="file"] {
+      padding: 8px 0;
+    }
+  }
+  
+  .action {
+    text-align: right;
+    margin-top: 25px;
+  }
+  
+  .submit-btn {
+    padding: 8px 30px;
+  }
+  

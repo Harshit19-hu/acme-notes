@@ -1,1 +1,13 @@
-<p>landing works!</p>
+<ng-container [ngTemplateOutlet]="activeTemplate"></ng-container>
+
+
+<!-- Template for Form -->
+<ng-template #formTemplate>
+  <button mat-stroked-button (click)="viewAllNotes()">Basic</button>
+  <app-dynamic-note-form [noteType]="'picture'" (formSubmit)="save($event)"></app-dynamic-note-form>
+</ng-template>
+
+<!-- Template for Notes -->
+<ng-template #layoutTemplate>
+  <app-note-layout [notes]="notesData"></app-note-layout>
+</ng-template>

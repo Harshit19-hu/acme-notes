@@ -4,8 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { AppStoreModule } from './state/app-store.module';
 import { SharedModule } from './shared/shared.module';
+import { StoreModule } from '@ngrx/store';
+import { notesReducer } from './core/state/notes/notes.reducer';
+
 
 @NgModule({
   declarations: [
@@ -14,9 +16,15 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AppStoreModule,
+    StoreModule.forRoot({
+      notes: notesReducer
+    }),
+    // EffectsModule.forRoot([
+    //   NotesEffects  
+    // ]) ,
     SharedModule,
-  ],
+
+   ],
   providers: [
     provideAnimationsAsync()
   ],

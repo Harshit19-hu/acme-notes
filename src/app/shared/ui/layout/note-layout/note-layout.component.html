@@ -1,1 +1,23 @@
-<p>note-layout works!</p>
+<div class="layout-container">
+
+    <aside class="sidebar">
+      <button mat-flat-button (click)="addNote()">Add Note</button>
+      <mat-nav-list>
+        <mat-list-item
+          *ngFor="let note of notes"
+          (click)="selectNote(note)"
+          [class.active]="selectedNote?.id === note.id"
+        >
+          <p matLine class="type">{{ note.data.title }}</p>
+        </mat-list-item>
+  
+      </mat-nav-list>
+    </aside>
+  
+    <section class="detail-pane" *ngIf="selectedNote">
+      <app-notes-list [note]="selectedNote"></app-notes-list>
+    </section>
+    
+  
+  </div>
+  

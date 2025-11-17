@@ -1,0 +1,67 @@
+<div class="page-container">
+
+  <!-- Header -->
+  <div class="header">
+    <mat-icon class="type-icon">note_add</mat-icon>
+    <h1>Add {{ noteType | titlecase }} Note</h1>
+  </div>
+
+  <mat-card class="form-card">
+    <form *ngIf="form" [formGroup]="form" (ngSubmit)="submit()">
+
+      <ng-container *ngFor="let field of fields">
+
+        <!-- TEXT INPUT -->
+        <mat-form-field *ngIf="field.type === 'text'" appearance="outline" class="field">
+          <mat-label>{{ field.label }}</mat-label>
+          <input matInput [formControlName]="field.name">
+        </mat-form-field>
+
+        <!-- TEXTAREA -->
+        <mat-form-field *ngIf="field.type === 'textarea'" appearance="outline" class="field">
+          <mat-label>{{ field.label }}</mat-label>
+          <textarea matInput rows="4" [formControlName]="field.name"></textarea>
+        </mat-form-field>
+
+        <!-- IMAGE UPLOAD -->
+        <div *ngIf="field.type === 'image'" class="upload-field">
+          <label>{{ field.label }}</label>
+        
+          <input
+            type="file"
+            accept="image/*"
+            (change)="onImageSelect($event, field.name)"
+          />
+        
+          <!-- Preview -->
+          <img
+            *ngIf="preview[field.name]"
+            [src]="preview[field.name]"
+            class="img-preview"
+          />
+        </div>
+        
+
+        <!-- PDF UPLOAD -->
+        <div *ngIf="field.type === 'pdf'" class="upload-field">
+          <label>{{ field.label }}</label>
+          <input type="file" accept="application/pdf" (change)="onFileSelect($event, field.name)" />
+        </div>
+
+        <!-- GENERIC FILE UPLOAD -->
+        <div *ngIf="field.type === 'file'" class="upload-field">
+          <label>{{ field.label }}</label>
+          <input type="file" (change)="onFileSelect($event, field.name)" />
+        </div>
+
+      </ng-container>
+
+      <div class="action">
+        <button mat-raised-button color="primary" class="submit-btn">
+          Save
+        </button>
+      </div>
+
+    </form>
+  </mat-card>
+</div>

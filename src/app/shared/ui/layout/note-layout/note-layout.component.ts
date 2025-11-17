@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-note-layout',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrl: './note-layout.component.scss'
 })
 export class NoteLayoutComponent {
+  @Input() notes: any[] = [];
+  @Output() addNotes = new EventEmitter<any>();
+  selectedNote: any = null;
+
+  selectNote(note: any) {
+    this.selectedNote = note;
+  }
+  addNote() {
+      this.addNotes.emit();
+  }
 
 }

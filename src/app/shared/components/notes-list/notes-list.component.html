@@ -1,0 +1,37 @@
+<ng-container [ngSwitch]="note.type">
+
+    <!-- TEXT NOTE -->
+    <div *ngSwitchCase="'text'">
+      <h2>{{ note.data.title }}</h2>
+      <p>{{ note.data.text }}</p>
+    </div>
+  
+    <!-- IMAGE NOTE -->
+    <div *ngSwitchCase="'picture'">
+      <h2>{{ note.data.title }}</h2>
+      <img
+        [src]="note.data.image"
+        class="full-img"
+      />
+      <p>{{ note.data.description }}</p>
+    </div>
+  
+    <!-- DOCUMENT NOTE -->
+    <div *ngSwitchCase="'document'">
+      <h2>{{ note.data.title }}</h2>
+  
+      <button mat-raised-button color="primary" (click)="openPdf()">
+        Open PDF
+      </button>
+    </div>
+  
+  </ng-container>
+  <div class="note-action">
+    <button mat-fab aria-label="Example icon button with a delete icon">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-fab aria-label="Example icon button with a delete icon">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  
