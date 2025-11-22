@@ -10,10 +10,11 @@
   }
   
   .sidebar {
-    width: 260px;
+    width: 14em;
     border-right: 1px solid #ddd;
     overflow-y: auto;
-    background: #fafafa;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   }
   
   .sidebar .active {

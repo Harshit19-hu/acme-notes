@@ -14,10 +14,17 @@ export class NotesStorageService {
     return JSON.parse(localStorage.getItem(this.storageKey) || '[]');
   }
 
-  saveNote(note: Note) {
-    console.log('local notes',note)
+  saveNote(note: Note,activeNote:any) {
+      const currentNote = {
+         id: Date.now().toString(),
+         type: activeNote,
+         data: note,
+         createdAt: new Date().toISOString(),
+         updatedAt: new Date().toISOString(),
+       };
+    console.log('local notes',currentNote)
     const notes = this.getNotes();
-    notes.push(note);
+    notes.push(currentNote);
     localStorage.setItem(this.storageKey, JSON.stringify(notes));
   }
 }

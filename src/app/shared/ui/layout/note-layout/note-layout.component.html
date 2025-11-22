@@ -6,18 +6,19 @@
       </div>
       <mat-nav-list>
         <mat-list-item
-          *ngFor="let note of notes"
+          *ngFor="let note of notes.savedNote"
           (click)="selectNote(note)"
           [class.active]="selectedNote?.id === note.id"
         >
-          <p matLine class="type">{{ note.data.title }}</p>
-        </mat-list-item>
+        <p matLine class="type epilis-text">{{ note.data.title || note.data.text }}</p>
+      </mat-list-item>
   
       </mat-nav-list>
     </aside>
-  
-    <section class="detail-pane" *ngIf="selectedNote">
-      <app-notes-list [note]="selectedNote"></app-notes-list>
+
+    <section class="detail-pane" >
+      <app-notes-list *ngIf="selectedNote" [note]="selectedNote"></app-notes-list>
+      <app-dynamic-note-form *ngIf="!selectedNote" [noteType]="notes.activeNote" (formSubmit)="save($event)"></app-dynamic-note-form>
     </section>
     
   

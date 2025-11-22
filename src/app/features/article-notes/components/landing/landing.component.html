@@ -1,4 +1,1 @@
-<app-dynamic-note-form
-    [noteType]="'article'"
-    (formSubmit)="save($event)">
-</app-dynamic-note-form>
+<app-note-layout (addNotes)="openForm()" [notes]="notesData"></app-note-layout>

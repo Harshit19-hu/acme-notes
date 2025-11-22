@@ -5,6 +5,13 @@ export const NOTE_FORM_CONFIGS: NoteFormConfig[] = [
   {
     type: 'text',
     fields: [
+      { name: 'text', label: 'Text', type: 'textarea', required: true }
+    ]
+  },
+
+  {
+    type: 'article',
+    fields: [
       { name: 'title', label: 'Title', type: 'text', required: true },
       { name: 'text', label: 'Text', type: 'textarea', required: true }
     ]
